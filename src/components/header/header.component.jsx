@@ -4,8 +4,9 @@ import "./header.component.scss";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
 import CartIcon from "../../card-icon/cart-icon.component";
+import CartDropDown from "../cart-dropdown/cart-dropdown.component";
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, hidden }) => (
   <div className="header">
     <Link className="logo-container" to="/">
       <div>HOME</div>
@@ -28,12 +29,15 @@ const Header = ({ currentUser }) => (
       )}
       <CartIcon />
     </div>
+    {hidden ? <></> : <CartDropDown />}
   </div>
 );
 
 //standard namn med redux codebases (rootReducern)
+//cart hidden, av och på
 const mapStateToProps = (state) => ({
   currentUser: state.user.currentUser,
+  hidden: state.cart.hidden,
 });
 
 export default connect(mapStateToProps)(Header);
