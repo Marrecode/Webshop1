@@ -6,6 +6,7 @@ import { addItem } from "../../redux/cart/cart.action";
 
 const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
+
   return (
     <div className="collection-item">
       <div
@@ -19,14 +20,15 @@ const CollectionItem = ({ item, addItem }) => {
         <span className="price">{price}</span>
       </div>
       <CustomButton onClick={() => addItem(item)} inverted>
-        Add to Cart
+        Add to cart
       </CustomButton>
     </div>
   );
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  addItem: (item) => dispatch(addItem()),
+  addItem: (item) => dispatch(addItem(item)),
 });
+
 //null första värdet och matchtoprops andra värdet.
 export default connect(null, mapDispatchToProps)(CollectionItem);
