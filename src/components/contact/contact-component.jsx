@@ -1,7 +1,7 @@
 import React from "react";
 
 const Contact = () => {
-  return <div>In Working at the moment progress</div>;
+  return <div>In Working progress at the moment</div>;
 };
 
 export default Contact;
