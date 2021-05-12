@@ -3,6 +3,7 @@ import "./sign-in.component.scss";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import { signInWithGoogle, auth } from "../../firebase/firebase.utils";
+import { Redirect } from "react-router";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class SignIn extends React.Component {
     try {
       await auth.signInWithEmailAndPassword(email, password);
       this.setState({ email: "", password: "" });
+      window.location.assign("/");
     } catch (error) {
       console.log(error);
     }
