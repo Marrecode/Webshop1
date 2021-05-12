@@ -1,7 +1,5 @@
 import React from "react";
-
 import MenuItem from "../menu-item/menu-item.component";
-
 import "./diectory.styles.scss";
 
 class Directory extends React.Component {
@@ -15,34 +13,32 @@ class Directory extends React.Component {
           imageUrl:
             "https://az1.hatstoremedia.com/hatstore/images/5704637692427_1/652/522/0/felix-55044-toyo-71-natural-straw-hat-mjm-hats.jpg",
           id: 1,
-          linkUrl: "hats",
         },
         {
           title: "jackets",
           imageUrl:
-            "http://www.bolf.eu//eng_pl_Mens-Leather-Jacket-Black-Bolf-1107-75137_2.jpg",
+            "https://www.bolf.eu/eng_il_Mens-Leather-Bomber-Jacket-Navy-Blue-Bolf-1147-79965.jpg",
           id: 2,
-          linkUrl: "jackets",
         },
         {
           title: "sneakers",
-          imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
+          imageUrl:
+            "https://www.sneaker.no/wp-hidden/wp-content/uploads/2021/03/DSC06155.jpg",
           id: 3,
-          linkUrl: "sneakers",
         },
         {
           title: "womens",
-          imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
+          imageUrl:
+            "https://n.nordstrommedia.com/ImageGallery/store/product/Zoom/7/_109204727.jpg?h=365&w=240&dpr=2",
           size: "large",
           id: 4,
-          linkUrl: "womens",
         },
         {
           title: "mens",
-          imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
+          imageUrl:
+            "https://i.pinimg.com/originals/86/3e/4c/863e4c28ade87c4324648555edce94e1.jpg",
           size: "large",
           id: 5,
-          linkUrl: "mens",
         },
       ],
     };

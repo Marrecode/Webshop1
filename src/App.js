@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-
+import contact from "./components/contact/contact-component";
 import "./App.css";
 import CheckoutPage from "./pages/checkout/checkout.component";
 import HomePage from "./pages/homepage/homepage.component";
@@ -41,9 +41,35 @@ class App extends React.Component {
       <div>
         <Header />
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/shop" component={ShopPage} />
-          <Route path="/checkout" component={CheckoutPage} />
+          <Route exact path="/signin" component={SignInAndSignUpPage} />
+
+          <Route
+            exact
+            path="/"
+            render={() =>
+              !this.props.currentUser ? <Redirect to="/signin" /> : <HomePage />
+            }
+          />
+          <Route
+            exact
+            path="/shop"
+            render={() =>
+              !this.props.currentUser ? <Redirect to="/signin" /> : <ShopPage />
+            }
+          />
+          <Route
+            exact
+            path="/checkout"
+            render={() =>
+              !this.props.currentUser ? (
+                <Redirect to="/signin" />
+              ) : (
+                <CheckoutPage />
+              )
+            }
+          />
+
+          <Route path="/contact" component={contact} />
           <Route
             exact
             path="/signin"
